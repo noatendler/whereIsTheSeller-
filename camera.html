@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>where is the seller?!</title>
+		<link rel="stylesheet" href="includes/style.css">
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<a href="index.php" id="logo"> </a>
+				<p class="number">
+					0
+				</p>
+				<img  class="cart" src="images/tabletShoppingCart.png" title="עגלה" alt="עגלה">
+			</header>
+			<main>
+				<h1 class="pageHeadline">וידאו</h1>
+				<img  class="video" src="images/video.png">
+			</main>
+			<div class="clear"></div>
+			<footer>
+				<nav>
+					<ul>
+						<li>
+							<a href="index.php" class="barcodeScan"> <img  src="images/barcode3.png" title="ברקוד" alt="ברקוד">
+							<p>
+								סריקת ברקוד
+							</p></a>
+						</li>
+						<li>
+							<a href="chooseCamera.html" class="barcodeScan"> <img src="images/camera2.png" title="מצלמה" alt="מצלמה">
+							<p id="video">
+								שיחת וידאו
+							</p></a>
+						</li>
+						<li>
+							<a href="#" class="barcodeScan"> <img src="images/bell.png" title="פעמון" alt="פעמון">
+							<p>
+								קרא למוכרת
+							</p></a>
+						</li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+		<script>
+			var valid = true;
+			$('input[required]').each(function() {
+			    if (this.value == '') {
+			        // Alert or message to let them know
+			        valid = false;
+			        return false; // stop on first error, or remove this and it'll go through all of them.
+			    }
+			});
+			
+			if (valid === false) {
+			    return false;
+			}
+		</script>
+	</body>
+</html>

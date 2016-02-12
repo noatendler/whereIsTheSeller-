@@ -1,0 +1,128 @@
+$.getJSON("includes/cartData.json", function(data){//Insert data according to JSON file action code
+			var actionCode = data.actionCode;
+			
+			/* override JSON reading */
+			actionCode = 0;
+
+			if (actionCode == 1 || actionCode == 2){
+				
+				newArticle = document.createElement("article");
+				newArticle.className = "dropDownCartMenuContentArticle";
+				
+				tempCartItemFragement.appendChild(newArticle);
+				tempChild = document.createElement("div");
+				tempChild.className = "dropDownCartMenuArticleImgContainer";
+				newArticle.appendChild(tempChild);
+				newVar = document.createElement("img");
+				tempChild.appendChild(newVar);
+				newVar.src = "images/blackBlazer2.png"; /* img from the DB */
+				newVar.className = "dropDownCartMenuArticleImg";
+				tempChild = document.createElement("h5");
+				newArticle.appendChild(tempChild);
+				tempChild.appendChild(document.createTextNode("שם הבגד")); /* cloth name from DB */
+				// tempChild = tempChild.childNodes[0];
+				// tempChild.innerHTML = "שם הבגד";
+				tempChild = document.createElement("p");
+				newArticle.appendChild(tempChild);
+				tempChild.innerHTML = "צבע:";
+				tempVar = document.createElement("span");
+				tempChild.appendChild(tempVar);
+				tempChild = tempVar;
+				tempChild.innerHTML = "צבע הבגד"; /* cloth color from DB */
+				tempChild = document.createElement("p");
+				newArticle.appendChild(tempChild);
+				tempChild.innerHTML = "מידה:";
+				tempVar = document.createElement("span");
+				tempChild.appendChild(tempVar);
+				tempChild = tempVar;
+				tempChild.innerHTML = "S/M/L"; /* cloth size from DB */
+				newArticle.appendChild(document.createElement("br"));
+				tempChild = document.createElement("p");
+				newArticle.appendChild(tempChild);
+				tempVar = document.createElement("a");
+				tempVar.className = "dropDownCartMenuArticleHrefs";
+				tempText = document.createTextNode("עדכון");
+				tempVar.appendChild(tempText);
+				//tempVar.innerHTML = "עדכון";
+				tempVar.href = "#";
+				tempChild.appendChild(tempVar);
+				tempVar = document.createTextNode("|");
+				tempChild.appendChild(tempVar);
+				tempVar = document.createElement("a");
+				tempVar.className = "dropDownCartMenuArticleHrefs";
+				tempText = document.createTextNode("הסרה");
+				tempVar.appendChild(tempText);
+				//tempVar.innerHTML = "הסרה";
+				tempVar.href = "#";
+				tempChild.appendChild(tempVar);
+				tempChild = document.createElement("div");
+				tempChild.className = "clear";
+				newArticle.appendChild(tempChild);
+				
+				dropDownCartMenuContent.appendChild(tempCartItemFragement);
+				layoutCartItemsCount.innerHTML = parseInt(layoutCartItemsCount.innerHTML.toString()) + 1;
+				
+			}
+			
+			
+			
+			if (actionCode == 2){
+				
+				newArticle = document.createElement("article");
+				newArticle.className = "dropDownCartMenuContentArticle";
+				
+				tempCartItemFragement.appendChild(newArticle);
+				tempChild = document.createElement("div");
+				tempChild.className = "dropDownCartMenuArticleImgContainer";
+				newArticle.appendChild(tempChild);
+				newVar = document.createElement("img");
+				tempChild.appendChild(newVar);
+				newVar.src = "images/bluePants2.png"; /* img from the DB */
+				newVar.className = "dropDownCartMenuArticleImg";
+				tempChild = document.createElement("h5");
+				newArticle.appendChild(tempChild);
+				tempChild.appendChild(document.createTextNode("שם הבגד")); /* cloth name from DB */
+				// tempChild = tempChild.childNodes[0];
+				// tempChild.innerHTML = "שם הבגד";
+				tempChild = document.createElement("p");
+				newArticle.appendChild(tempChild);
+				tempChild.innerHTML = "צבע:";
+				tempVar = document.createElement("span");
+				tempChild.appendChild(tempVar);
+				tempChild = tempVar;
+				tempChild.innerHTML = "צבע הבגד"; /* cloth color from DB */
+				tempChild = document.createElement("p");
+				newArticle.appendChild(tempChild);
+				tempChild.innerHTML = "מידה:";
+				tempVar = document.createElement("span");
+				tempChild.appendChild(tempVar);
+				tempChild = tempVar;
+				tempChild.innerHTML = "S/M/L"; /* cloth size from DB */
+				newArticle.appendChild(document.createElement("br"));
+				tempChild = document.createElement("p");
+				newArticle.appendChild(tempChild);
+				tempVar = document.createElement("a");
+				tempVar.className = "dropDownCartMenuArticleHrefs";
+				tempText = document.createTextNode("עדכון");
+				tempVar.appendChild(tempText);
+				//tempVar.innerHTML = "עדכון";
+				tempVar.href = "#";
+				tempChild.appendChild(tempVar);
+				tempVar = document.createTextNode("|");
+				tempChild.appendChild(tempVar);
+				tempVar = document.createElement("a");
+				tempVar.className = "dropDownCartMenuArticleHrefs";
+				tempText = document.createTextNode("הסרה");
+				tempVar.appendChild(tempText);
+				//tempVar.innerHTML = "הסרה";
+				tempVar.href = "#";
+				tempChild.appendChild(tempVar);
+				tempChild = document.createElement("div");
+				tempChild.className = "clear";
+				newArticle.appendChild(tempChild);
+				
+				dropDownCartMenuContent.appendChild(tempCartItemFragement);
+				layoutCartItemsCount.innerHTML = parseInt(layoutCartItemsCount.innerHTML.toString()) + 1;
+			}
+			
+		});//end of JSON function

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>where is the seller?!</title>
+		<link rel="stylesheet" href="includes/style.css">
+		<script src="includes/scripts.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<a href="index.php" id="logo"> </a>
+				<p class="number">
+					0
+				</p>
+				<img  class="cart" src="images/tabletShoppingCart.png" title="עגלה" alt="עגלה">
+			</header>
+			<main>
+				<h1 class="pageHeadline">תיאור פריט</h1>
+				<h2 class="pageHeadline"> &check;נמצא הפריט המבוקש</h2>
+				<img  class="blazer" src="images/shirt.png">
+				<p class="discription2">
+					חולצה מכופרת כחולה
+				</p>
+				<h4>פריטים נוספים שיכולים לעניין אותך</h4>
+				<section class="secTab">
+					<img src="images/blueShirt1.png">
+					<img src="images/blackShirt1.png">
+					<img src="images/redShirt1.png">
+				</section>
+				<form action="updateCart.php" method="get">
+					<label>
+						<select class="selectSize">
+							<option value="" default selected>מידה</option>
+							<option value="s" name="size">S</option>
+							<option value="m" name="size">M</option>
+							<option value="l" name="size">L</option>
+							<option value="xl" name="size">XL</option>
+						</select> </label>
+					<label>
+						<select class="selectColor">
+							<option value="" default selected>צבע</option>
+							<option value="black" name="color">שחור</option>
+							<option value="navy" name="color">כחול כהה</option>
+							<option value="red" name="color">אדום</option>
+							<option value="brown" name="color">חום</option>
+						</select> </label>
+					<label>
+						<input type="submit" id="button2" value="סרוק מוצר נוסף" formaction="index.php">
+					</label>
+					<label>
+						<input type="submit" id="button1" value="הזמן מהמוכרת" formaction="waitingForSeller.html">
+					</label>
+				</form>
+			</main>
+			<div class="clear"></div>
+			<footer>
+				<nav>
+					<ul>
+						<li>
+							<a href="index.php" class="barcodeScan"> <img  src="images/barcode7.png" title="ברקוד" alt="ברקוד">
+							<p>
+								סריקת ברקוד
+							</p></a>
+						</li>
+						<li>
+							<a href="chooseCamera.html" class="barcodeScan"> <img src="images/camera1.png" title="מצלמה" alt="מצלמה">
+							<p id="video">
+								שיחת וידאו
+							</p></a>
+						</li>
+						<li>
+							<a href="#" class="barcodeScan"> <img src="images/bell.png" title="פעמון" alt="פעמון">
+							<p>
+								קרא למוכרת
+							</p></a>
+						</li>
+					</ul>
+				</nav>
+			</footer>
+			<script>
+			</script>
+		</div>
+	</body>
+</html>

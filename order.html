@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>מלאי</title>
+		<link rel="stylesheet" href="includes/style.css">
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	<header>
+		<a href="index.php" id="logo"> </a>
+		<img  class="clock1" src="images/clock1.png" title="שעון" alt="שעון">
+		<nav class="desktopNav">
+			<ul class="MenuDesktop">
+				<li><a href="work1.php" class="MenuDesktopBorder">עובדים</a></li>
+				<li><a href="statstic.html" class="MenuDesktopBorder">סטטיסטיקה</a></li>
+				<li><a href="inventory.html" class="MenuDesktopNoBorder current">מלאי</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="clear"></div>
+		<main class="mainDesktop">
+			<h1 class="headlineDesk">הזמנת פריט</h1>
+			<div class="clear"> </div>
+			<a href="index.php" class="breadcrums"> <דף הבית</a><a href="inventory.html" class="description"> <מלאי</a><a href="gender.html" class="description"><מגדר</a>
+			<a  href="warehouse.html" class="description"><כמות פריטים במחסן </a><article class="description">הזמנה</article>
+			<div class="clear"></div>
+			<form action="" method="">
+				<section class="orderSection">
+					<label>
+						<select class="selectSizeOfItem">
+						<option value="" selected>מידה</option>
+						<option value="s">S</option>
+						<option value="m">M</option>
+						<option value="l">L</option>
+						<option value="xl">XL</option>
+						</select>
+				    </label>
+					<label>
+						<input class="selectQuantityOfItem" type="number" required name="quantity" value="כמות"  min="1" max="1000">
+					</label> 
+				</section>
+				<p id="plus"></p>
+				<input type="submit" value="שלח">
+			</form>
+		</main>
+		<div class="clear"></div>
+	<script>
+		$(document).ready(function() {
+			  $("p").click(function () {
+			     $("section:first").clone().insertAfter("section:last");
+			     $("p:first").clone().insertAfter("section");
+			   });
+			});
+	</script>
+	</body>
+</html>
