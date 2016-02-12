@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta charset="UTF-8">
-		<title>where is the seller?!</title>
-		
-		<link rel="stylesheet" href="includes/style.css">
-		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
-		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		<script src="includes/scripts.js"></script>
-	</head>
-	<body>
 
+<<<<<<< HEAD
 			<header >
 				<a href="#" id="logo"></a>
 				<p class="number numberExt">
@@ -131,3 +119,6 @@
 		
 	</body>
 </html>
+=======
+Do you see it NOT in the site, but in your PC???
+>>>>>>> cfd2dbb9a9ee087431ee0fd3968aa7c7b7807a01
