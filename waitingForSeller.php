@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,7 +17,38 @@
 					0
 				</p>
 				<img  class="cart" src="images/tabletShoppingCart.png" title="עגלה" alt="עגלה">
-				
+				<div class="dropDownCartMenu dropDownCartMenuShadowWrapper">
+					<div class="dropDownCartMenuHeader">
+						<button id="topDropDownCartMenuButton">
+							&#10006;
+						</button>
+						<p>עגלת הקניות</p>
+						<div class="clear"></div>
+					</div>
+					<div class="dropDownCartMenuContent">
+					<?php
+						include ("dbAccess.php");
+						if (isset($_GET['size'])) {
+							$size1 = $_GET['size'];
+							$color1 = $_GET['color'];
+							$image = "images/bluePants2.png";
+							$sql = "insert into tbl_cart_202(description,size,color,image) values ('Pants','$size1','$color1','$image')";
+							$insert_row = $connection -> query($sql);
+							if (!$insert_row) {
+								die('Error : (' . $connection -> errno . ') ' . $connection -> error);
+							}
+						}
+
+						include("buildCartView.php")
+						?>
+					</div>
+					<div class="dropDownCartMenuFooter">
+						<button class="bottomCloseButton">
+							סגור
+						</button>
+						<div class="clear"></div>				
+					</div>						
+				</div>
 			</header>
 			<main id="clockMain">
 				<h1 class="pageHeadline">זמן הגעה של המוכרת</h1>
@@ -65,8 +95,9 @@
 		<script>
 			updateCart();
 			setTheTimer();
-			$('.cartModal').modal({show:true});
-			$('.modal-backdrop').removeClass("modal-backdrop");
+			$('.dropDownCartMenu').slideToggle(300);
+			// $('.cartModal').modal({show:true});
+			// $('.modal-backdrop').removeClass("modal-backdrop");
 		</script>
 	</body>
 </html>

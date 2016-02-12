@@ -3,6 +3,7 @@
 	<head>
 		<title>where is the seller?!</title>
 		<link rel="stylesheet" href="includes/style.css">
+		<script src="includes/scripts.js"></script>
 		<meta charset="UTF-8">
 	</head>
 	<body>
@@ -27,9 +28,9 @@
 					<img  id="img1" src="images/pinkPants.png">
 					<img id="img1" src="images/redPants.png">
 				</section>
-				<form action="" method="">
+				<form action="updateCart.php" method="get">
 					<label>
-						<select class="selectSize">
+						<select class="selectSize" name="size">
 							<option value="" default selected>מידה</option>
 							<option value="34">34</option>
 							<option value="36">36</option>
@@ -37,18 +38,18 @@
 							<option value="40">40</option>
 						</select> </label>
 					<label>
-						<select class="selectColor">
+						<select class="selectColor" name="color">
 							<option value="" default selected>צבע</option>
-							<option value="black">שחור</option>
-							<option value="navy">כחול כהה</option>
-							<option value="red">אדום</option>
-							<option value="brown">חום</option>
+							<option value="black" name="color">שחור</option>
+							<option value="navy" name="color">כחול כהה</option>
+							<option value="red" name="color">אדום</option>
+							<option value="brown" name="color">חום</option>
 						</select> </label>
 					<label>
 						<input type="submit" id="button2" value="סרוק מוצר נוסף" formaction="index.php">
 					</label>
 					<label>
-						<input type="submit" id="button1" value="הזמן מהמוכרת" formaction="waitingForSeller.html">
+						<input type="submit" id="button1" value="הזמן מהמוכרת" formaction="waitingForSeller.php">
 					</label>
 				</form>
 			</main>

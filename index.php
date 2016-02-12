@@ -28,35 +28,23 @@
 					</div>
 					<div class="dropDownCartMenuContent">
 						<?php
-						include("dbAccess.php");
+						include ("dbAccess.php");
 						
-						 $sql = "SELECT * FROM tbl_cart_202";
-						 $result = $connection->query($sql);
-						 if ($result->num_rows > 0) {
-						 // output data of each row
-					    	 while($row = $result->fetch_assoc()) {
-					      	 echo '
-					      	 <article class="dropDownCartMenuContentArticle">
-					      	 	<div class="dropDownCartMenuArticleImgContainer">
-					      	 		<img class="dropDownCartMenuArticleImg" 
-					      	 			src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>
-					      	 	</div>
-					      	 	<h5>' . $row['description'] . '</h5>
-					      	 	<p>צבע:<span>'.$row['color'].'</span></p>
-								<p>מידה:<span>'.$row['size'].'</span></p>
-								<br>
-								<p>
-									<a class="dropDownCartMenuArticleHrefs" href="#">עדכון</a>|<a class="dropDownCartMenuArticleHrefs" href="#">הסרה</a>
-								</p>
-								<div class="clear"></div>
-					      	 </article>
-					      	 ';
-					      	 	
-						 }	
-						 } else {
-				    	 echo "<p>אין פריטים בעגלה</p>";
-						 } 
-						
+						if (isset($_GET['size'])) {
+							$size1 = $_GET['size'];
+							$color1 = $_GET['color'];
+							$image = "images/blackBlazer2.png";
+							$sql = "insert into tbl_cart_202(description,size,color,image) values ('Blazer','$size1','$color1','$image')";
+							$insert_row = $connection -> query($sql);
+							if (!$insert_row) {
+								die('Error : (' . $connection -> errno . ') ' . $connection -> error);
+							}
+						}
+						else{
+							$sql = "truncate table tbl_cart_202";
+							$result = $connection -> query($sql);
+						}
+						include("buildCartView.php")
 						?>
 					</div>
 					<div class="dropDownCartMenuFooter">
@@ -140,8 +128,6 @@
 		<script>
 			updateCart();
 		</script>
-		<?php
-			mysqli_close($connection);
-		?>
+		
 	</body>
 </html>

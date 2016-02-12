@@ -51,6 +51,27 @@ var updateCart = (function(){
 		var cartItemsNumber = $('.dropDownCartMenuContentArticle').size();
 		layoutCartItemsCount.innerHTML = cartItemsNumber;
 		
+		
+		$('.removeBtn').click(function(){
+			var removeArticle = $(this).closest('article');
+			var removeIndex = removeArticle.index() + 1;
+			removeIndex = removeIndex.toString();
+			removeArticle.remove();
+			layoutCartItemsCount.innerHTML -= 1;
+			
+			console.log("trying to remove index:" + removeIndex);
+			
+			$.ajax({
+				type: "POST",
+				url: "alterCartView.php",
+				data: {indexToRemove:removeIndex},
+				cache: true,
+				success: function(html){
+					console.log("data sent");
+				}  
+			});
+		});
+		
 	};
 })();
 

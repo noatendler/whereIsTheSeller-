@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<title>עובדים</title>
-		<link rel="stylesheet" href="includes/style.css">
-		 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="includes/scripts.js"></script>
 		<meta charset="UTF-8">
 	</head>
-	<body>
+	<body onLoad="buildHtmlTable('#t01')">
 	<header>
 		<a href="index.html" id="logo"> </a>
 		<img  class="clock1" src="images/clock1.png">
@@ -28,33 +28,91 @@
 			<div class="clear"> </div>
 			
 			<table id="t01">
-			    <tr>
-			        <th>כמות פניות</th>
-			  	 	<th>מצב עובד</th>
-			  	 	<th>שעת כניסה למערכת</th>
-			   		<th>שם העובד</th>
-			    </tr>
-			    
+				<td id="firstRow">
+				<th>
+					מספר פניות
+				</th>
+				<th>
+					מצב עובד
+				</th>
+				<th>
+					שעת כניסה
+				</th>
+				<th>
+					שם עובד
+				</th>
+				</td>
 			</table>
 		</main>
 		<div class="clear"></div>
-	</body>
+		
 	<script>
+	var myList = [{
+			"numCalls": "3",
+			"status": "תפוס",
+			"entry": "11:01:20",
+			"name": "הדס"
+		}, {
+			"numCalls": "4",
+			"status": "פנוי",
+			"entry": "11:34:45",
+			"name": "גיל"
+		}, {
+			"numCalls": "1",
+			"status": "תפוס",
+			"entry": "12:07:15",
+			"name": "אור"
+		}, {
+			"numCalls": "7",
+			"status": "פנוי",
+			"entry": "12:27:09",
+			"name": "רוני"
+		}, {
+				"numCalls": "3",
+					"status": "תפוס",
+						"entry": "17:08:25",
+			"name": "טל"
+		}, {
+			"numCalls": "4",
+				"status": "פנוי",
+							"entry": "16:10:00",
+			"name": "אורית"
+		}];
 	
-		(function drawTable(workers){
-		    for (var i = 0; i < workers.length; i++) {
-		        drawRow(workers[i]);
+	
+	function buildHtmlTable(selector) {
+	    var columns = addAllColumn(myList, selector);
+	
+	    for (var i = 0 ; i < myList.length ; i++) {
+	        var row = $('<tr>');
+	        for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
+	            var cellValue = myList[i][columns[colIndex]];
+	
+	            if (cellValue == null) { cellValue = ""; }
+	
+	            row.append($('<td>').html(cellValue));
+	        }
+	        $(selector).append(row);
+	    }
+	
+		function addAllColumn(myList)
+		{
+		    var columnSet = [];
+		
+		    for (var i = 0 ; i < myList.length ; i++) {
+		        var rowHash = myList[i];
+		        for (var key in rowHash) {
+		            if ($.inArray(key, columnSet) == -1){
+		                columnSet.push(key);
+		            }
+		        }
 		    }
-		    
-		    function drawRow(rowData) {
-		    var row = $("<tr>");
-		    $("#t01").append(row);
-		    row.append($("<td>" + rowData.name + "</td>"));
-		    row.append($("<td>" + rowData.entry + "</td>"));
-		    row.append($("<td>" + rowData.status + "</td>"));
-		    row.append($("<td>" + rowData.numCalls + "</td>"));
-			}
-	})();
-	
-</script>
+		    $(selector).append(firstRow);
+		
+		    return columnSet;
+		}
+	}
+	</script>
+
+	</body>
 </html>

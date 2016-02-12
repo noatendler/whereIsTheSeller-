@@ -21,7 +21,7 @@ header,nav,footer,main,section{
 
 
 /*Desktop settings/////////////////////////////////////////////////////////////////////////////////////////*/
-@media (min-width:851px)
+@media (min-width:1026px)
 {
 	#mainBarcode{/* fix: eliminate mainBarcode from the desktop layout */
 		display: none;
@@ -294,7 +294,7 @@ input[type=submit]{
 
 
 /*Tablet settings////////////////////////////////////////////////*/
-@media (max-width:850px) and (min-width:591px)
+@media (max-width:1025px) and (min-width:591px)
 {
 	.clock1, .desktopNav, .picDesktop, .descriptionDesk, .headlineDesk {
 		display: none;
