@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>עובדים</title>
+		<link rel="stylesheet" href="includes/style.css">
+		 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="includes/scripts.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	<header>
+		<a href="index.html" id="logo"> </a>
+		<img  class="clock1" src="images/clock1.png">
+		<nav class="desktopNav">
+			<ul class="MenuDesktop">
+				<li><a href="work1.php" class="MenuDesktopBorder current">עובדים</a></li>
+				<li><a href="statstic.html" class="MenuDesktopBorder">סטטיסטיקה</a></li>
+				<li><a href="inventory.html" class="MenuDesktopNoBorder">מלאי</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="clear"> </div>
+		<main class="mainDesktop">
+			<h1 class="headlineDesk">עובדים</h1>
+			<div class="clear"> </div>
+		<a href="index.php" class="breadcrums">&#60;דף הבית </a> <p class="description"> עובדים </p>
+			<div class="clear"> </div>
+			
+			<table id="t01">
+			    <tr>
+			        <th>כמות פניות</th>
+			  	 	<th>מצב עובד</th>
+			  	 	<th>שעת כניסה למערכת</th>
+			   		<th>שם העובד</th>
+			    </tr>
+			    
+			</table>
+		</main>
+		<div class="clear"></div>
+	</body>
+	<script>
+	
+		(function drawTable(workers){
+		    for (var i = 0; i < workers.length; i++) {
+		        drawRow(workers[i]);
+		    }
+		    
+		    function drawRow(rowData) {
+		    var row = $("<tr>");
+		    $("#t01").append(row);
+		    row.append($("<td>" + rowData.name + "</td>"));
+		    row.append($("<td>" + rowData.entry + "</td>"));
+		    row.append($("<td>" + rowData.status + "</td>"));
+		    row.append($("<td>" + rowData.numCalls + "</td>"));
+			}
+	})();
+	
+</script>
+</html>

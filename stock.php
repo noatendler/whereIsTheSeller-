@@ -21,7 +21,7 @@
 		<main class="mainDesktop">
 			<h1 class="headlineDesk">כמות פריטים במחסן</h1>
 			<div class="clear"></div>
-			<a href="index.php" class="breadcrums"> <דף הבית</a><p class="description">מלאי</p>
+			<a href="index.php" class="breadcrums"> &#60;דף הבית</a><p class="description">מלאי</p>
 			<div class="clear"> </div>
 			<table id="t01">
 			  <tr>
@@ -34,15 +34,14 @@
 			  	<th>צבע</th>	
 			    <th>קוד פריט</th>
 			  </tr>
-			  
-<?php
+			  <?php
 			 //create a mySQL DB connection:
 				$dbhost = "166.62.8.11";
 				$dbuser = "auxstudDB5";
 				$dbpass = "auxstud5DB1!";
 				$dbname = "auxstudDB5";
 				$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-				
+			
 				 //testing connection success
 				 if(mysqli_connect_errno()) {
 				 die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
@@ -64,6 +63,7 @@
 				} else {
 				    echo "0 results";
 				} 
+			mysqli_close($connection);
 ?>
 			</table>
 		</main>
