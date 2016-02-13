@@ -21,7 +21,8 @@
 		<main class="mainDesktop">
 			<h1 class="headlineDesk">כמות פריטים במחסן</h1>
 			<div class="clear"></div>
-			<a href="index.php" class="breadcrums"> &#60;דף הבית</a><p class="description">מלאי</p>
+			<a href="index.php" class="breadcrums"> &#60;דף הבית</a><a href="inventory.html" class="description"> &#60;מלאי-נעליים</a><a href="gender.html" class="description">&#60;מגדר</a>
+			<p class="description">כמות פריטים במחסן</p>
 			<div class="clear"> </div>
 			<table id="t01">
 			  <tr>
@@ -47,9 +48,7 @@
 				 die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
 				 );
 				 }
-				 
-				  header('Content-Type: text/html; charset=utf-8');
-				 
+			 
 				$connection->query("SET NAMES 'utf8' COLLATE 'utf8_unicode_ci'"); 
 
 				$sql = "SELECT * FROM tbl_stock_202";
@@ -67,6 +66,12 @@
 			?>
 			</table>
 		</main>
-		<div class="clear"></div>
+			<script>
+				$(document).ready(function() {
+		    	$("tr:last").click(function() {
+		        window.document.location.href = 'order.html';
+			    });
+			});
+			</script>
 	</body>
 </html>

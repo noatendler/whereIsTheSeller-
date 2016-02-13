@@ -18,15 +18,46 @@
 			<main>
 				<h1 class="pageHeadline">תיאור פריט</h1>
 				<h2 class="pageHeadline"> &check;נמצא הפריט המבוקש</h2>
-				<img  class="bluePants" src="images/bluePants.png">
-				<p class="discription1">
+				<?php
+					include("dbAccess.php" );
+
+						$sql = "SELECT * FROM tbl_bigImg_202 where id=6"; //query string
+						$result = $connection -> query($sql);
+						if ($result -> num_rows > 0) {
+						// output data of each row
+						
+						while($row = $result -> fetch_assoc()){
+						echo '<img id="mainPants" src="' . $row['img'] . '"/>';
+						}
+						}	
+					?>
+				<!--<img  id="mainPants" src="images/bluePants.png">-->
+				<p id="discription1">
 					מכנס מחויט כחול כהה
 				</p>
 				<h4>פריטים נוספים שיכולים לעניין אותך</h4>
 				<section class="secTab">
-					<img id="img1" src="images/blackPants.png">
-					<img  id="img1" src="images/pinkPants.png">
-					<img id="img1" src="images/redPants.png">
+					<?php
+						$sql = "SELECT * FROM tbl_smallImg_202"; //query string
+						$result = $connection -> query($sql);
+						if ($result -> num_rows > 0) {
+						// output data of each row
+						
+						while($row = $result -> fetch_assoc()){
+							
+							if ($row['id'] == 5){
+						echo '<img id="pBlack" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
+							}
+								if ($row['id'] == 7){
+						echo '<img id="pPink" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
+							}
+									if ($row['id'] == 8){
+						echo '<img id="pRed" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
+							}
+						}
+						}
+				      mysqli_close($connection);
+					?>
 				</section>
 				<form action="updateCart.php" method="get">
 					<label>
@@ -79,5 +110,31 @@
 				</nav>
 			</footer>
 		</div>
+		<script>
+		  function changeImage(img) {
+		    var newImg = document.getElementById('mainPants');
+		    var descript=document.getElementById('discription1');
+		    switch (img.id) {
+		      case 'pBlack':
+		      {
+		        newImg.src = "images/blackPantsBig.png";
+		        descript.innerHTML="מכנס מחוייט שחור צמוד";
+		      } 
+		        break;
+		      case 'pPink':
+		      {
+		        newImg.src = "images/pinkPantsBig.png";
+		        descript.innerHTML="מכנס מחוייט ורוד מסטיק";
+		      }
+		        break;
+		      case 'pRed':
+		      default:
+		      {
+		   		 newImg.src = "images/redPantsBig.png";
+		   		 descript.innerHTML="מכנס מחוייט אדום שני";
+		   	  }
+		    }
+		  }
+		</script>
 	</body>
 </html>

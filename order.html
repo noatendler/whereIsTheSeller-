@@ -25,15 +25,15 @@
 			<a href="index.php" class="breadcrums"> &#60;דף הבית</a><a href="inventory.html" class="description"> &#60;מלאי</a><a href="gender.html" class="description">&#60;מגדר</a>
 			<a  href="warehouse.html" class="description">&#60;כמות פריטים במחסן </a><article class="description">הזמנה</article>
 			<div class="clear"></div>
-			<form action="" method="">
+			<form action="makeOrder.php" method="get">
 				<section class="orderSection">
 					<label>
-						<select class="selectSizeOfItem">
-						<option value="" selected>מידה</option>
-						<option value="36">36</option>
-						<option value="37">37</option>
-						<option value="38">38</option>
-						<option value="39">39</option>
+						<select class="selectSizeOfItem" name="size">
+						<option value="" default selected>מידה</option>
+						<option value="36" name="size">36</option>
+						<option value="37" name="size">37</option>
+						<option value="38" name="size">38</option>
+						<option value="39" name="size">39</option>
 						</select>
 				    </label>
 					<label>

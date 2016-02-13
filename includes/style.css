@@ -54,7 +54,7 @@ header{
 	background:url('../images/topBorderDesk.png') no-repeat bottom;
 }
 .clock1{
-	margin-left:90px;
+	margin-left:6.42%;
 	margin-top:83px;
 	width:60px;
 	height:50px;
@@ -86,7 +86,7 @@ header{
 }
 .headlineDesk{
 	float:right;
-	margin-right:90px;
+	margin-right:6.42%;
 	font-family:"Times New Roman", Times, serif;
 	font-weight: normal;
 }
@@ -120,8 +120,8 @@ header{
 	padding: 45px 0px 0px 0px;
 }
 #pieImg{
-	margin-left:370px;
-	margin-top:80px;
+	margin-left:25%;
+	margin-top:5.71%;
 }
 table{
     width:80%;
@@ -232,7 +232,7 @@ table#t01 th{
 	border-radius:10px;
 	background-color:#EBEBEB;
 	float:right;
-	margin:100px 280px 15px 0px;	
+	margin:100px 180px 15px 0px;	
 }
 .selectSizeOfItem{
 	width: 190px;
@@ -278,7 +278,7 @@ input[type=submit]{
 .breadcrums{
 	font-family: Arial;
 	float:right;
-	margin-right: 92px;
+	margin-right: 6.57%;
 	font-size: 14px;
 	color: #929292;
 }
@@ -288,6 +288,12 @@ input[type=submit]{
 	margin-right: 2px;
 	font-size: 14px;
 	color: #929292;
+}
+.orderSucsses{
+	float:right;
+	font-family: "Times New Roman", Times, serif;
+	margin-right: 6%;
+	margin-top: 10px;
 }
 }
 /*/////////////////////////////////////////////////////////////////////////////////////////*/
@@ -603,15 +609,15 @@ input[type=submit]{
 		padding-top: 39px;
 		color: #FF0000;
 	}
-	.blazer {
+	#blazer {
 		margin-left: 20%;
 		margin-top: -57px;
-		width: 180px;
+		width: 160px;
 	}
-	.discription {
+	#discription {
 		font-size: 16px;
 		margin-left: 20%;
-		margin-top: -10px;
+		margin-top: -6px;
 	}
 	h4 {
 		direction: rtl;
@@ -664,18 +670,18 @@ input[type=submit]{
 		margin-top: -320px;
 		margin-right: 20%;
 	}
-	.bluePants {
+	#mainPants {
 		margin-left: 27%;
 		margin-top: -53px;
 		width: 90px;
 	}
-	.discription1 {
+	#discription1 {
 		margin-left: 25%;
 	}
-	.discription2 {
+	#discription2 {
 		margin-left: 24%;
 	}
-	#img1 {
+	.img1 {
 		padding-left: 15%;
 		width: 13%;
 		height: 108px;

@@ -18,15 +18,44 @@
 			<main>
 				<h1 class="pageHeadline">תיאור פריט</h1>
 				<h2 class="pageHeadline"> &check;נמצא הפריט המבוקש</h2>
-				<img  class="blazer" src="images/blackBlazer.png">
-				<p class="discription">
+					<?php
+						include("dbAccess.php" );
+							$sql = "SELECT * FROM tbl_bigImg_202 where id=1"; //query string
+							$result = $connection -> query($sql);
+							if ($result -> num_rows > 0) {
+							// output data of each row
+							
+							while($row = $result -> fetch_assoc()){
+							echo '<img id="blazer" src="' . $row['img'] . '"/>';
+							}
+							}	
+					?>
+				<p id="discription">
 					בלייזר שחור עם שרוולים צרים
 				</p>
 				<h4>פריטים נוספים שיכולים לעניין אותך</h4>
 				<section class="secTab">
-					<img src="images/blazerPink.png">
-					<img src="images/blazerYellow.png">
-					<img src="images/blazerBlue.png">
+					<?php
+						$sql = "SELECT * FROM tbl_smallImg_202"; //query string
+						$result = $connection -> query($sql);
+						if ($result -> num_rows > 0) {
+						// output data of each row
+						
+						while($row = $result -> fetch_assoc()){
+							
+							if ($row['id'] == 2){
+						echo '<img id="bBlue" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
+							}
+								if ($row['id'] == 3){
+						echo '<img id="bPink" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
+							}
+									if ($row['id'] == 4){
+						echo '<img id="bYellow" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
+							}
+						}
+						}
+					mysqli_close($connection);
+					?>
 				</section>
 				
 				<form action="updateCart.php" method="get">
@@ -48,8 +77,6 @@
 						</select> </label>
 					
 						<input type="submit" id="button2" value="סרוק מוצר נוסף" formaction="index.php">
-					
-					
 						<input type="submit" id="button1" value="הזמן מהמוכרת" formaction="updateCart.php">
 					
 				</form>
@@ -79,8 +106,32 @@
 					</ul>
 				</nav>
 			</footer>
-			<script>
-			</script>
 		</div>
+				<script>
+		  function changeImage(img) {
+		    var newImg = document.getElementById('blazer');
+		    var descript=document.getElementById('discription');
+		    switch (img.id) {
+		      case 'bBlue':
+		      {
+		        newImg.src = "images/blazerBlueBig.png";
+		        descript.innerHTML="בלייזר כחול עם שרוולים צרים";
+		      } 
+		        break;
+		      case 'bPink':
+		      {
+		        newImg.src = "images/blazerPinkBig.png";
+		        descript.innerHTML="בלייזר צמוד ורוד שרוולים צרים";
+		      }
+		        break;
+		      case 'bYellow':
+		      default:
+		      {
+		   		 newImg.src = "images/blazerYellowBig.png";
+		   		 descript.innerHTML="בלייזר  שמש צהוב שרוולים צרים";
+		   	  }
+		    }
+		  }
+		</script>
 	</body>
 </html>
