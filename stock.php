@@ -64,7 +64,7 @@
 				    echo "0 results";
 				} 
 			mysqli_close($connection);
-?>
+			?>
 			</table>
 		</main>
 		<div class="clear"></div>

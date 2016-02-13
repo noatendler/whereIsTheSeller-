@@ -1,5 +1,16 @@
-
-<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>where is the seller?!</title>
+		
+		<link rel="stylesheet" href="includes/style.css">
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="includes/scripts.js"></script>
+	</head>
+	<body>
 			<header >
 				<a href="#" id="logo"></a>
 				<p class="number numberExt">
@@ -11,7 +22,6 @@
 						<button id="topDropDownCartMenuButton">
 							&#10006;
 						</button>
-						<p>עגלת הקניות</p>
 						<div class="clear"></div>
 					</div>
 					<div class="dropDownCartMenuContent">
@@ -22,15 +32,11 @@
 							$size1 = $_GET['size'];
 							$color1 = $_GET['color'];
 							$image = "images/blackBlazer2.png";
-							$sql = "insert into tbl_cart_202(description,size,color,image) values ('Blazer','$size1','$color1','$image')";
+							$sql = "insert into tbl_cart_202(description,size,color,image) values ('בלייזר 763','$size1','$color1','$image')";
 							$insert_row = $connection -> query($sql);
 							if (!$insert_row) {
 								die('Error : (' . $connection -> errno . ') ' . $connection -> error);
 							}
-						}
-						else{
-							$sql = "truncate table tbl_cart_202";
-							$result = $connection -> query($sql);
 						}
 						include("buildCartView.php")
 						?>
@@ -42,10 +48,6 @@
 						<div class="clear"></div>				
 					</div>						
 				</div>
-
-
-
-
 		<img  class="clock1" src="images/clock1.png" title="שעון" alt="שעון">
 		<nav class="desktopNav">
 			<ul class="MenuDesktop">
@@ -63,6 +65,24 @@
 				<a href="itemFoundPants.html" id="rightLink"></a>			
 				<div class="clear"></div>
 				
+				<section id="cartDialog">
+					<img id="cartDialogImage" src="">
+					<h1>הסר מוצר</h1>
+					<br>
+					<p>שםבגד</p>
+					<p>צבעבגד</p>
+					<p>מידהבגד</p>
+					<select name="size" id="cartDialogSelectBlazerSize">
+						<option value="" default selected>מידה</option>
+						<option value="s" >S</option>
+						<option value="m">M</option>
+						<option value="l" >L</option>
+						<option value="xl">XL</option>
+					</select>
+					<button id="cartDialogRemove">מחק מוצר</button>
+					<button id="cartDialogCancel">ביטול</button>
+					<div class="clear"></div>
+				</section>
 				
 			<h1 class="headlineDesk">דף הבית</h1>
 			<div class="clear"> </div>
@@ -112,13 +132,10 @@
 					</ul>
 				</nav>
 			</footer>
-			
+			<div id="lightBoxShadowBackground"></div>
 		<script>
 			updateCart();
 		</script>
 		
 	</body>
 </html>
-=======
-Do you see it NOT in the site, but in your PC???
->>>>>>> cfd2dbb9a9ee087431ee0fd3968aa7c7b7807a01
