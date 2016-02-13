@@ -11,7 +11,7 @@
 		<img  class="clock1" src="images/clock1.png">
 		<nav class="desktopNav">
 			<ul class="MenuDesktop">
-				<li><a href="work1.php" class="MenuDesktopBorder">עובדים</a></li>
+				<li><a href="work.html" class="MenuDesktopBorder">עובדים</a></li>
 				<li><a href="statstic.html" class="MenuDesktopBorder">סטטיסטיקה</a></li>
 				<li><a href="inventory.html" class="MenuDesktopNoBorder current">מלאי</a></li>
 			</ul>
