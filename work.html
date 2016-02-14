@@ -24,9 +24,8 @@
 			<div class="clear"> </div>
 		<a href="index.php" class="breadcrums">&#60;דף הבית </a> <p class="description"> עובדים </p>
 			<div class="clear"> </div>
-			
 			<table id="t01">
-				<td id="firstRow">
+				<tr id="firstRow">
 				<th>
 					מספר פניות
 				</th>
@@ -39,78 +38,21 @@
 				<th>
 					שם עובד
 				</th>
-				</td>
+				</tr>
 			</table>
 		</main>
 		<div class="clear"></div>
-		
 	<script>
-	var myList = [{
-			"numCalls": "3",
-			"status": "תפוס",
-			"entry": "11:01:20",
-			"name": "הדס"
-		}, {
-			"numCalls": "4",
-			"status": "פנוי",
-			"entry": "11:34:45",
-			"name": "גיל"
-		}, {
-			"numCalls": "1",
-			"status": "תפוס",
-			"entry": "12:07:15",
-			"name": "אור"
-		}, {
-			"numCalls": "7",
-			"status": "פנוי",
-			"entry": "12:27:09",
-			"name": "רוני"
-		}, {
-				"numCalls": "3",
-					"status": "תפוס",
-						"entry": "17:08:25",
-			"name": "טל"
-		}, {
-			"numCalls": "4",
-				"status": "פנוי",
-							"entry": "16:10:00",
-			"name": "אורית"
-		}];
-	
-	
-	function buildHtmlTable(selector) {
-	    var columns = addAllColumn(myList, selector);
-	
-	    for (var i = 0 ; i < myList.length ; i++) {
-	        var row = $('<tr>');
-	        for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
-	            var cellValue = myList[i][columns[colIndex]];
-	
-	            if (cellValue == null) { cellValue = ""; }
-	
-	            row.append($('<td>').html(cellValue));
-	        }
-	        $(selector).append(row);
-	    }
-	
-		function addAllColumn(myList)
-		{
-		    var columnSet = [];
-		
-		    for (var i = 0 ; i < myList.length ; i++) {
-		        var rowHash = myList[i];
-		        for (var key in rowHash) {
-		            if ($.inArray(key, columnSet) == -1){
-		                columnSet.push(key);
-		            }
-		        }
-		    }
-		    $(selector).append(firstRow);
-		
-		    return columnSet;
-		}
-	}
+	$(document).ready(function(){
+			$.getJSON("includes/workersData.json", function(data){
+				$.each(data.workers, function(){
+					$("#t01").append(
+						"<tr><td>" + this.numCalls + "</td><td>" + this.status + "</td><td>" + this.entry + "</td><td>" + this.name + "</td></tr>"
+					);
+				});
+			}
+			);
+		})();
 	</script>
-
-	</body>
+  </body>
 </html>

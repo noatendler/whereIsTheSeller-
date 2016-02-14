@@ -36,22 +36,19 @@
 			  	<th>צבע</th>	
 			    <th>קוד פריט</th>
 			  </tr>
-			  <?php
+			<?php
 			 //create a mySQL DB connection:
 				$dbhost = "166.62.8.11";
 				$dbuser = "auxstudDB5";
 				$dbpass = "auxstud5DB1!";
 				$dbname = "auxstudDB5";
 				$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-			
 				 //testing connection success
 				 if(mysqli_connect_errno()) {
 				 die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
 				 );
 				 }
-			 
 				$connection->query("SET NAMES 'utf8' COLLATE 'utf8_unicode_ci'"); 
-
 				$sql = "SELECT * FROM tbl_stock_202";
 				$result = $connection->query($sql);
 				if ($result->num_rows > 0) {
@@ -64,7 +61,7 @@
 				    echo "0 results";
 				} 
 			mysqli_close($connection);
-			?>
+		    ?>
 			</table>
 		</main>
 			<script>

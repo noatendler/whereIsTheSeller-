@@ -26,20 +26,14 @@
 				$dbpass = "auxstud5DB1!";
 				$dbname = "auxstudDB5";
 				$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-			
 				 //testing connection success
 				 if(mysqli_connect_errno()) {
 				 die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
 				 );
 				 }
-			
-	
-			
 				$size1 = $_GET['size'];
 				$quantity1= $_GET['quantity'];
-				
 				$connection->query("SET NAMES 'utf8' COLLATE 'utf8_unicode_ci'"); 
-				
 				for($x=0; $x<sizeof($size1); $x++)
 				{
 											
@@ -52,7 +46,6 @@
 				}				
 						
 				}
-				
 			mysqli_close($connection);	
 ?>
 		<main class="mainDesktop">

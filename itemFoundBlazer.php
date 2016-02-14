@@ -47,7 +47,6 @@
 							$result = $connection -> query($sql);
 							if ($result -> num_rows > 0) {
 							// output data of each row
-							
 							while($row = $result -> fetch_assoc()){
 							echo '<img id="blazer" src="' . $row['img'] . '"/>';
 							}
@@ -63,7 +62,6 @@
 						$result = $connection -> query($sql);
 						if ($result -> num_rows > 0) {
 						// output data of each row
-						
 						while($row = $result -> fetch_assoc()){
 							
 							if ($row['id'] == 2){
@@ -80,7 +78,6 @@
 					mysqli_close($connection);
 					?>
 				</section>
-				
 				<form action="index.php" method="get">
 					<label>
 						<select class="selectSize" name="size">
@@ -101,7 +98,6 @@
 					
 						<input type="submit" id="button2" value="סרוק מוצר נוסף" formaction="index.php">
 						<input type="submit" id="button1" value="הזמן מהמוכרת" formaction="waitingForSeller.php">
-					
 				</form>
 				<section id="cartDialog">
 					<div class="cartDialogHeader">
@@ -181,7 +177,6 @@
 		<div id="lightBoxShadowBackground"></div>
 				<script>
 				updateCart();
-				
 		  function changeImage(img) {
 		    var newImg = document.getElementById('blazer');
 		    var descript=document.getElementById('discription');

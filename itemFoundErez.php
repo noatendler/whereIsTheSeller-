@@ -64,9 +64,7 @@
 						$result = $connection -> query($sql);
 						if ($result -> num_rows > 0) {
 						// output data of each row
-						
 						while($row = $result -> fetch_assoc()){
-							
 							if ($row['id'] == 9){
 						echo '<img id="eBlack" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
 							}
@@ -98,7 +96,6 @@
 							<option value="אדום" name="color">אדום</option>
 							<option value="חום" name="color">חום</option>
 						</select> </label>
-		
 						<input type="submit" id="button2" value="סרוק מוצר נוסף" formaction="index1.php">
 						<input type="submit" id="button1" value="הזמן מהמוכרת" formaction="waitingForSeller1.php">
 				</form>
@@ -179,7 +176,6 @@
 		<div id="lightBoxShadowBackground"></div>
 				<script>
 				updateCart();
-				
 		  function changeImage(img) {
 		    var newImg = document.getElementById('blazer');
 		    var descript=document.getElementById('discription2');

@@ -11,11 +11,11 @@
 		<script src="includes/scripts.js"></script>
 	</head>
 	<body>
-			<header >
-				<a href="#" id="logo"></a>
-				<p class="number numberExt">
-					0
-				</p>
+		<header >
+			<a href="#" id="logo"></a>
+			<p class="number numberExt">
+				0
+			</p>
 				<img  class="cart" src="images/tabletShoppingCart.png" title="עגלה" alt="עגלה">
 				<div class="dropDownCartMenu dropDownCartMenuShadowWrapper">
 					<div class="dropDownCartMenuHeader">
@@ -56,7 +56,6 @@
 			</ul>
 		</nav>
 			</header>
-			
 			<main>
 				<h1 class="pageHeadline">סריקת מוצר</h1>
 				<img src="images/mainBarcode.jpg" title="ברקוד" alt="ברקוד" id="mainBarcode">
@@ -64,7 +63,6 @@
 				<a href="itemFoundPants.php" id="middleLink"></a>
 				<a href="itemFoundErez.php" id="rightLink"></a>			
 				<div class="clear"></div>
-				
 				<section id="cartDialog">
 					<div class="cartDialogHeader">
 						<button id="cartDialogCloseButton">
@@ -113,7 +111,6 @@
 					<button id="cartDialogCancelButton">ביטול</button>
 					<div class="clear"></div>
 				</section>
-				
 			<h1 class="headlineDesk">דף הבית</h1>
 			<div class="clear"> </div>
 			<a href="work.html">
@@ -136,7 +133,6 @@
 			<div class="clear"></div>
 			</a>					
 			</main>
-			
 			<div class="clear"></div>
 			<footer>
 				<nav>
@@ -166,6 +162,5 @@
 		<script>
 			updateCart();
 		</script>
-		
 	</body>
 </html>

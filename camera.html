@@ -48,12 +48,10 @@
 			var valid = true;
 			$('input[required]').each(function() {
 			    if (this.value == '') {
-			        // Alert or message to let them know
 			        valid = false;
 			        return false; // stop on first error, or remove this and it'll go through all of them.
 			    }
 			});
-			
 			if (valid === false) {
 			    return false;
 			}

@@ -18,10 +18,7 @@ if (isset($_GET['dialogItemName'])) {
 		die('Error : (' . $connection -> errno . ') ' . $connection -> error);
 	}
 	$row = $itemImage -> fetch_assoc();
-	
 	echo '<img src="' . $row['img'] . '"/>';
-	
 }
-
 mysqli_close($connection);
 ?>

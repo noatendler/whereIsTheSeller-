@@ -11,8 +11,6 @@ if (isset($_GET['itemKind'])) {
 		if (!$insert_row) {
 			die('Error : (' . $connection -> errno . ') ' . $connection -> error);
 		}
-
-	
 	mysqli_close($connection);
 }
 ?>

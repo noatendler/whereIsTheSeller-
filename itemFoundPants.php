@@ -26,7 +26,6 @@
 					<div class="dropDownCartMenuContent">
 					<?php
 						include ("dbAccess.php");
-						
 						include("buildCartView.php")
 						?>
 					</div>
@@ -43,12 +42,10 @@
 				<h2 class="pageHeadline"> &check;נמצא הפריט המבוקש</h2>
 				<?php
 					include("dbAccess.php" );
-
 						$sql = "SELECT * FROM tbl_bigImg_202 where id=6"; //query string
 						$result = $connection -> query($sql);
 						if ($result -> num_rows > 0) {
 						// output data of each row
-						
 						while($row = $result -> fetch_assoc()){
 						echo '<img id="mainPants" src="' . $row['img'] . '"/>';
 						}
@@ -65,9 +62,7 @@
 						$result = $connection -> query($sql);
 						if ($result -> num_rows > 0) {
 						// output data of each row
-						
 						while($row = $result -> fetch_assoc()){
-							
 							if ($row['id'] == 5){
 						echo '<img id="pBlack" onclick="changeImage(this)" src="' . $row['img'] . '"/>';
 							}
@@ -106,7 +101,6 @@
 						<input type="submit" id="button1" value="הזמן מהמוכרת" formaction="waitingForSeller.php">
 					</label>
 				</form>
-				
 				<section id="cartDialog">
 					<div class="cartDialogHeader">
 						<button id="cartDialogCloseButton">
@@ -185,7 +179,6 @@
 		<div id="lightBoxShadowBackground"></div>
 		<script>
 		updateCart();
-		
 		  function changeImage(img) {
 		    var newImg = document.getElementById('mainPants');
 		    var descript=document.getElementById('discription1');

@@ -4,7 +4,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8">
 		<title>Where is the seller?!</title>
-
 		<link rel="stylesheet" href="includes/style.css">
 		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -113,7 +112,6 @@
 					<button id="cartDialogCancelButton">ביטול</button>
 					<div class="clear"></div>
 				</section>
-				
 			</main>
 			<div class="clear"></div>
 			<footer>
@@ -146,8 +144,6 @@
 			updateCart();
 			setTheTimer();
 			$('.dropDownCartMenu').slideToggle(300);
-			// $('.cartModal').modal({show:true});
-			// $('.modal-backdrop').removeClass("modal-backdrop");
 		</script>
 	</body>
 </html>
