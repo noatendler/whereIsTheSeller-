@@ -25,14 +25,13 @@
 						<div class="clear"></div>
 					</div>
 					<div class="dropDownCartMenuContent">
-						<?php
+					<?php
 						include ("dbAccess.php");
-						
 						if (isset($_GET['size'])) {
 							$size1 = $_GET['size'];
 							$color1 = $_GET['color'];
 							$image = "images/blackBlazer2.png";
-							$sql = "insert into tbl_cart_202(description,size,color,image) values ('בלייזר 763','$size1','$color1','$image')";
+							$sql = "insert into tbl_cart_202(description,size,color,itemkind,image) values ('בלייזר 763','$size1','$color1','blazer','$image')";
 							$insert_row = $connection -> query($sql);
 							if (!$insert_row) {
 								die('Error : (' . $connection -> errno . ') ' . $connection -> error);
@@ -61,32 +60,63 @@
 			<main>
 				<h1 class="pageHeadline">סריקת מוצר</h1>
 				<img src="images/mainBarcode.jpg" title="ברקוד" alt="ברקוד" id="mainBarcode">
-				<a href="itemFoundBlazer.html" id="leftLink"></a>
-				<a href="itemFoundPants.html" id="rightLink"></a>			
+				<a href="itemFoundBlazer.php" id="leftLink"></a>
+				<a href="itemFoundPants.php" id="middleLink"></a>
+				<a href="itemFoundErez.php" id="rightLink"></a>			
 				<div class="clear"></div>
 				
 				<section id="cartDialog">
-					<img id="cartDialogImage" src="">
-					<h1>הסר מוצר</h1>
+					<div class="cartDialogHeader">
+						<button id="cartDialogCloseButton">
+							&times;
+						</button>
+					</div>
+					<div id="cartDialogImage"></div>
+					<h2 id="cartDialogHealine">הסר מוצר</h2>
 					<br>
-					<p>שםבגד</p>
-					<p>צבעבגד</p>
-					<p>מידהבגד</p>
-					<select name="size" id="cartDialogSelectBlazerSize">
-						<option value="" default selected>מידה</option>
-						<option value="s" >S</option>
-						<option value="m">M</option>
-						<option value="l" >L</option>
-						<option value="xl">XL</option>
-					</select>
-					<button id="cartDialogRemove">מחק מוצר</button>
-					<button id="cartDialogCancel">ביטול</button>
+					<p class="removeFromCart cartDialogItemName">שםבגד</p>
+					<p class="removeFromCart cartDialogItemColor">צבע:</p>
+					<p class="removeFromCart cartDialogItemSize">מידה:</p>
+					<section>
+						<select class="cartDialogBlazerContent updateCart" name="size" id="cartDialogSelectBlazerSize">
+							<option value="" default selected>מידה</option>
+							<option value="s" >S</option>
+							<option value="m">M</option>
+							<option value="l" >L</option>
+							<option value="xl">XL</option>
+						</select>
+						<select class="cartDialogBlazerContent updateCart" name="color" id="cartDialogSelectBlazerColor">
+							<option value="" default selected>צבע</option>
+							<option value="black" name="color">שחור</option>
+							<option value="navy" name="color">כחול כהה</option>
+							<option value="red" name="color">אדום</option>
+							<option value="brown" name="color">חום</option>
+						</select>
+						<select class="cartDialogPantsContent updateCart" name="size" id="cartDialogSelectPantsSize">
+							<option value="" default selected>מידה</option>
+							<option value="34">34</option>
+							<option value="36">36</option>
+							<option value="38">38</option>
+							<option value="40">40</option>
+						</select>
+						<select class="cartDialogPantsContent updateCart" name="color" id="cartDialogSelectPantsColor">
+							<option value="" default selected>צבע</option>
+							<option value="black" name="color">שחור</option>
+							<option value="navy" name="color">כחול כהה</option>
+							<option value="red" name="color">אדום</option>
+							<option value="brown" name="color">חום</option>
+						</select>
+					</section>
+					<button id="cartDialogRemoveButton">מחק מוצר</button>
+					<button id="cartDialogBlazerUpdateButton">עדכן</button>
+					<button id="cartDialogPantsUpdateButton">עדכן</button>
+					<button id="cartDialogCancelButton">ביטול</button>
 					<div class="clear"></div>
 				</section>
 				
 			<h1 class="headlineDesk">דף הבית</h1>
 			<div class="clear"> </div>
-			<a href="work1.php">
+			<a href="work.html">
 			<section class="secHomePage" id="workers">
 				<img class="picDesktop" src="images/work2.png" title="עובדים" alt="עובדים">
 				<p class="descriptionDesk">עובדים</p>

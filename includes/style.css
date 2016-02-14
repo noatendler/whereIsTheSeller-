@@ -38,6 +38,9 @@ header,nav,footer,main,section{
 	.cart, .pageHeadline, .barcodeExt, .imgExt, .titleIcon, .numberExt{
 		display:none;
 }
+#cartDialog{
+		display: none;
+	}
 a{
 	text-decoration: none;
 	color:#000000;
@@ -305,6 +308,111 @@ input[type=submit]{
 	.clock1, .desktopNav, .picDesktop, .descriptionDesk, .headlineDesk {
 		display: none;
 	}
+	#lightBoxShadowBackground {
+		background-image:url(../images/shade1x1-0.5.png);
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height: 100%;
+		z-index:100;
+		display: none;
+	}
+	#cartDialog{
+		position: absolute;
+		left: 17.5%;
+		top: 20%;
+		width: 60%;
+		height: 360px;
+		z-index: 101;
+		background: #ebebeb;
+		text-align: right;
+		direction:rtl;
+		display: none;
+	}
+	#cartDialogCloseButton{
+		border: none;
+		text-align: center;
+		background-color: #ebebeb;
+		font-size: 27px;
+		color: #7a7a7a;
+		padding: 0px 1% 0px 0px;
+		margin: 0px;
+		
+	}
+	#cartDialogImage{
+		float: left;
+		width: 190px;
+		height: 250px;
+		margin-left: 5%;
+	}
+	#cartDialog img{
+		width: 100%;
+		height: 100%;
+		
+	}
+	#cartDialog h2{
+		font-family: "Times New Roman", Times, serif;
+		/* override */
+		color: #000000;
+		margin: 0px 5% 0px 0px;
+		padding: 0px;
+	}
+	#cartDialog p{
+		font-size: 20px;
+		/* override */
+		margin: 0px 0px 0px 0px;
+		padding: 1% 5% 1% 0%;
+	}
+	#cartDialog select.updateCart{
+		background-color: #ffffff;
+		width: 21%;
+		height: 8%;
+		margin-top: 10%;
+		border: 2px solid #9f9f9f;
+	}
+	#cartDialogSelectBlazerSize, #cartDialogSelectPantsSize{
+		margin-right: 3%;
+	}
+	#cartDialogSelectBlazerColor, #cartDialogSelectPantsColor{
+		margin-right: 1%;
+	}
+	#cartDialogRemoveButton, #cartDialogBlazerUpdateButton, #cartDialogPantsUpdateButton{
+		position: absolute;
+		bottom: 4%;
+		right: 3%;
+		background-image: -webkit-linear-gradient(top, #fefefe, #e0e0e0);
+		background-image: -moz-linear-gradient(top, #c7c7c7, #6e6e6e);
+		background-image: -ms-linear-gradient(top, #fefefe, #e0e0e0);
+		background-image: -o-linear-gradient(top, #fefefe, #e0e0e0);
+		background-image: linear-gradient(to bottom, #c7c7c7, #6e6e6e);
+		width: 21%;
+		height: 9%;
+		border: none;
+		border-radius: 5px;
+		color: #ffffff;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 17px;
+		padding-bottom: 4px;
+	}
+	#cartDialogCancelButton{
+		position: absolute;
+		bottom: 4%;
+		right: 26%;
+		background-image: -webkit-linear-gradient(top, #fefefe, #e0e0e0);
+		background-image: -moz-linear-gradient(top, #c7c7c7, #6e6e6e);
+		background-image: -ms-linear-gradient(top, #fefefe, #e0e0e0);
+		background-image: -o-linear-gradient(top, #fefefe, #e0e0e0);
+		background-image: linear-gradient(to bottom, #c7c7c7, #6e6e6e);
+		width: 21%;
+		height: 9%;
+		border: none;
+		border-radius: 5px;
+		color: #ffffff;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 17px;
+		padding-bottom: 4px;
+	}		
 	a {
 		text-decoration: none;
 		color: #000000;
@@ -329,19 +437,28 @@ input[type=submit]{
 		position: absolute;
 		display: block;
 		top: 200px;
-		width: 140px;
+		width: 10%;
 		height: 179px;
 		float: left;
-		left: 33.5%;
+		left: 32%;
+	}
+	#middleLink {
+		position: absolute;
+		display: block;
+		top: 200px;
+		left: 42.05%;
+		width: 10%;
+		height: 179px;
+		float: left;
 	}
 	#rightLink {
 		position: absolute;
 		display: block;
 		top: 200px;
-		right: 33.5%;
-		width: 140px;
+		left: 52%;
+		width: 10%;
 		height: 179px;
-		float: right;
+		float: left;
 	}
 	#mainBarcode {
 		position: relative;

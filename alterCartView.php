@@ -1,8 +1,8 @@
 <?php
-if (isset($_POST['indexToRemove'])) {
+if (isset($_GET['indexToRemove'])) {
 	include ("dbAccess.php");
 	
-	$remInd = mysqli_real_escape_string($connection, $_POST['indexToRemove']);
+	$remInd = mysqli_real_escape_string($connection, $_GET['indexToRemove']);
 	$sql1 = "delete from tbl_cart_202 where id=$remInd";
 	$insert_row = $connection -> query($sql1);
 	if (!$insert_row) {

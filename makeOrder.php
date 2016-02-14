@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>מלאי</title>
+		<title>ביצוע הזמנה</title>
 		<link rel="stylesheet" href="includes/style.css">
 		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<meta charset="UTF-8">
@@ -32,19 +32,27 @@
 				 die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
 				 );
 				 }
-				 
-				$size1=$_GET['size'];
-				$quantity1=$_GET['quantity'];
+			
 	
+			
+				$size1 = $_GET['size'];
+				$quantity1= $_GET['quantity'];
+				
 				$connection->query("SET NAMES 'utf8' COLLATE 'utf8_unicode_ci'"); 
-
-				$sql = "INSERT INTO tbl_order_202 VALUES('$size1','$quantity1')";
+				
+				for($x=0; $x<sizeof($size1); $x++)
+				{
+											
+				$sql = "INSERT INTO tbl_order_202 VALUES('$size1[$x]','$quantity1[$x]')";
 				$result = $connection->query($sql);
 				if ($connection->query($sql) === TRUE) {
-					
+					echo " ";
 				} else {
-				   echo "Error: " . $sql . "<br>" . $connection->error;
+					  echo "Error: " . $sql . "<br>" . $connection->error;
+				}				
+						
 				}
+				
 			mysqli_close($connection);	
 ?>
 		<main class="mainDesktop">

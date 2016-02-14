@@ -31,8 +31,8 @@
 						if (isset($_GET['size'])) {
 							$size1 = $_GET['size'];
 							$color1 = $_GET['color'];
-							$image = "images/bluePants2.png";
-							$sql = "insert into tbl_cart_202(description,size,color,itemkind,image) values ('מכנס מחוייט 324','$size1','$color1','pants','$image')";
+							$image = "images/blueShirt1.png";
+							$sql = "insert into tbl_cart_202(description,size,color,itemkind,image) values ('חולצה מכופתרת כחולה','$size1','$color1','blueShirt','$image')";
 							$insert_row = $connection -> query($sql);
 							if (!$insert_row) {
 								die('Error : (' . $connection -> errno . ') ' . $connection -> error);

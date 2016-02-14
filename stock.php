@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>עובדים</title>
+		<title>מלאי</title>
 		<link rel="stylesheet" href="includes/style.css">
+		<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<meta charset="UTF-8">
 	</head>
 	<body>
